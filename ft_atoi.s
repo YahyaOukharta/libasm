@@ -28,8 +28,6 @@ is_space:
 	je skip_space
 	jmp check_sign
 
-
-
 check_sign:
 	xor r8, r8
 	mov dl, [rdi + rcx]

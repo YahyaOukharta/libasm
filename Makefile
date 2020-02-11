@@ -4,8 +4,7 @@ FLAGS = -f macho64
 
 SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s \
 	   ft_write.s ft_read.s ft_strdup.s ft_atoi.s \
-	   ft_atoi_base.s ft_lst_size.s \
-	   ft_lst_add_front.s
+	   ft_lst_size.s ft_lst_add_front.s
 
 OBJS = $(SRCS:.s=.o)
 
@@ -17,7 +16,8 @@ $(NAME):
 
 clean:
 	rm -f a.out
-	rm -rf *.o
+	rm -f *.o
+	rm -rf a.out.dSYM
 
 fclean: clean
 	rm -f $(NAME)

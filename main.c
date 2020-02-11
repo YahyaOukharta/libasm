@@ -3,69 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youkhart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: youkhart <youkhart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 20:11:16 by youkhart          #+#    #+#             */
-/*   Updated: 2020/02/03 22:37:36 by youkhart         ###   ########.fr       */
+/*   Created: 2020/02/11 17:51:55 by youkhart          #+#    #+#             */
+/*   Updated: 2020/02/11 19:05:39 by youkhart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../corr/ft_printf/ft_printf.h"
+#include <stdio.h>
 #include "libasm.h"
+#include <stdlib.h>
 
-void	ft_lst_print(t_list *lst)
+int		main(void)
 {
-	int i = 1;
-
-	while (lst)
-	{
-		printf("--------------------------------\n");
-		printf("element %d: %p\n", i, lst);
-		printf("\tcontent : %s\n", lst->content);
-		printf("\tnext    : %p\n", lst->next);
-		printf("--------------------------------\n");
-		lst = lst->next;
-	}
-}
-int main(int ac, char **av)
-{
+	char *str;
 	char *buf;
-	char s1[20];
-	char s2[20];
-	char *ptr;
+	char *out;
+	char *tmp;
 
-	buf = "hello, world!";
+	printf("\n   'ft_strlen':\n");
+	str = "";
+	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
+	str = "hello";
+	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
+	str = "0123456789";
+	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
+
+	//strcpy
+	printf("\n   'ft_strcpy':\n");
+	//null cases
+	buf = calloc(1 ,20);
+	printf("null cases: \n");
+	str = (void *)0;
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", buf, str, ft_strcpy(buf, str));
+	str = (void *)0;
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", (void *)0, str, ft_strcpy((void *)0, str));
+	str = "hello world";
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", (void *)0, str, ft_strcpy((void *)0, str));
+	//copy
+	printf("normal cases: \n");
+	buf = calloc(1, 20);
+	str = "1234567890";
+	tmp = ft_strdup(buf);
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", tmp, str, ft_strcpy(buf, str));
+	str = "hello";
+	tmp = ft_strdup(buf);
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", tmp, str, ft_strcpy(buf, str));	
+	str = "12345678912345678";
+	tmp = ft_strdup(buf);
+	printf("dst : %-20s | src : %-20s | output : %-20s\n", tmp, str, ft_strcpy(buf, str));	
+
+	//strcmp
+	printf("\n   'ft_strcmp':\n");
+	printf("s1  : %-20s | s2  : %-20s | output : %-20d\n", "", "1", ft_strcmp("", "1"));
+	printf("s1  : %-20s | s2  : %-20s | output : %-20d\n", "1", "", ft_strcmp("1", ""));
+	printf("s1  : %-20s | s2  : %-20s | output : %-20d\n", "aaaa", "aaaa", ft_strcmp("aaaa", "aaaa"));
+	printf("s1  : %-20s | s2  : %-20s | output : %-20d\n", "aaab", "aaaa", ft_strcmp("aaab", "aaaa"));
 	
-	/*
+	//write
+	printf("\n   'ft_write': \n");
+	str = "hello, world!";
+	printf("fd : 1 | buf : %-20s | count ")
+	write("")
 
-	* ft_strlen *
-	printf	("%zu\n",ft_strlen(buf));
-	printf("%zu\n",ft_strlen(""));
-	printf("%zu\n",ft_strlen("123456"));
-	// printf("%zu\n",ft_strlen(NULL)); //this will segfault
-
-	* ft_strcpy *
-	ptr = ft_strcpy(s1, buf);
-	printf("%s\n", s1);
-	printf("%s\n", ptr);
-	printf("%s\n", ptr);
-	*/
-/*	
-	t_list *e1 = ft_lstnew(buf);
-	t_list *e2 = ft_lstnew(buf + 2);
-	t_list *e3 = ft_lstnew(buf + 4);	
-	t_list *e4 = ft_lstnew(buf + 6);
-	ft_lst_add_front(&e1, e2);
-   ft_lst_add_front(&e1, e3);
-   //ft_lst_add_front(&e1, e1);
-   ft_lst_print(e1);
-	printf("%d\n",ft_lst_size(e1)); 
-*/
-
-	printf("%d\n", ft_atoi_base("a1b2c","0123456789abcdef"));
 	return (0);
 }
-
-
-
-

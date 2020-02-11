@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libasm.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youkhart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: youkhart <youkhart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 20:04:36 by youkhart          #+#    #+#             */
-/*   Updated: 2020/02/03 13:19:41 by youkhart         ###   ########.fr       */
+/*   Updated: 2020/02/11 17:58:29 by youkhart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ ssize_t	ft_read(int fd, const void *buf, size_t n_bytes);
 int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, const char *base);
 int		check_double(const char *str);
-int		ft_lst_size(t_list *lst);
-void	ft_lst_add_front(t_list **alst, t_list *new);
+//int		ft_lst_size(t_list *lst);
+//void	ft_lst_add_front(t_list **alst, t_list *new);

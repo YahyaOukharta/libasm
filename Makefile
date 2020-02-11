@@ -25,5 +25,6 @@ fclean: clean
 re: fclean all
 
 c : re
-	gcc main.c -L. -lasm -L../corr/ft_printf/ -lftprintf	-g
-	./a.out
+	gcc main.c -L. -lasm -L../corr/ft_printf/ -lftprintf -g
+	clear
+	@./a.out

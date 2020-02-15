@@ -6,12 +6,11 @@
 /*   By: youkhart <youkhart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:51:55 by youkhart          #+#    #+#             */
-/*   Updated: 2020/02/14 19:00:28 by youkhart         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:27:30 by youkhart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libasm.h"
-
 
 int		main(void)
 {
@@ -26,21 +25,21 @@ int		main(void)
 
 	str = "";
 	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
-	
+
 	str = "hello";
 	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
-	
+
 	str = "0123456789";
 	printf("Input : %-20s | output : %-20zu\n", str, ft_strlen(str));
 	//
 
 	//ft_strcpy
 	printf("\n \033[1;32m[+] \033[0m ft_strcpy :\n\n");
-	
+
 		//null cases
 	buf = calloc(20 ,1);
 	printf("  -> NULL cases: \n");
-	
+
 	str = (void *)0;
 	printf("dst : %-20s | src : %-20s | output : %-20s\n", buf, str, ft_strcpy(buf, str));
 	
@@ -136,6 +135,5 @@ int		main(void)
 	tmp = ft_strdup(str);
 	printf("\nsrc : %-20s | new string : %-20s \n", str, tmp);
 	//
-
 	return (0);
 }

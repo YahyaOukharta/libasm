@@ -6,7 +6,7 @@
 /*   By: youkhart <youkhart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 20:11:16 by youkhart          #+#    #+#             */
-/*   Updated: 2020/02/15 17:19:46 by youkhart         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:25:40 by youkhart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lst_print(t_list *lst)
 {
 	int i;
-	
+
 	i = 1;
 	while (lst)
 	{

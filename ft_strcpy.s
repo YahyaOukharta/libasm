@@ -3,19 +3,18 @@ section .text
 
 ; char	*ft_strcpy(char *dst,char *src); dst : rdi, src : rsi 
 _ft_strcpy:	
-			push rdi
-			cmp rdi, 0
+			mov r8, rdi
+			cmp r8, 0
 			je end
 			cmp rsi, 0
 			je end
 	copy:	mov al, [rsi]
-			mov [rdi], al
+			mov [r8], al
 			inc rsi
-			inc rdi
+			inc r8
 			cmp byte [rsi], 0
 			jne copy
 			mov al, [rsi]
-			mov [rdi], al
-	end:	pop rax
+			mov [r8], al
+	end:	mov rax, rdi
 			ret
-

@@ -1,7 +1,7 @@
 section .text
-	global _ft_lst_add_front
+	global _ft_list_push_front
 
-_ft_lst_add_front:
+_ft_list_push_front:
 	cmp rdi, 0
 	je end
 	cmp rsi, 0
